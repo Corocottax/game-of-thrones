@@ -11,12 +11,14 @@ body {
     margin: 0px;
     padding: 0px;
     list-style: none;
+    font-family: Open sans;
+    font-weight: lighter;
 
 }
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('fonts/Game\ of\ Thrones.ttf') format('truetype');
+    src: url('fonts/GameofThrones.ttf') format('truetype');
     font-style: normal;
     font-weight: normal;
-  }
+}

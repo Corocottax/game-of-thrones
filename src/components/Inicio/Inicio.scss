@@ -1,6 +1,42 @@
 .inicio {
 
     background-image: url("https://cdn.zeplin.io/5e1c73baff24c3be01ba9cca/assets/6065c636-48ca-4142-8b36-8fd60a70402b.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     height: 100vh;
+
+    @media (max-width: 500px) {
+        background-image: url("https://res.cloudinary.com/dhp2zuftj/image/upload/v1643816574/bg-mobile_fzgrij.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-attachment: initial;
+    }
+
+}
+
+.tituloInicio {
+
+    text-align: center;
+    font-size: 10vw;
+
+}
+
+.titulo {
+
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inicio-header {
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
 
 }
