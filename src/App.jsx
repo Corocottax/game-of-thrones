@@ -5,6 +5,7 @@ function App() {
     <div>
       <p>hola putos</p>
       <p>GOT is comming</p>
+      <p>GOT is comming 2</p>
     </div>
   );
 }
