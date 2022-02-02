@@ -6,6 +6,7 @@ function App() {
       <p>hola putos</p>
       <p>GOT is comming</p>
       <p>GOT is comming 2</p>
+      <p> Se escribe God cabrones, the Godess is here</p>
     </div>
   );
 }
