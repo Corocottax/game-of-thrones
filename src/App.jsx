@@ -19,8 +19,8 @@ function App() {
             <Route index element={<Inicio/>}/>
             <Route path="personajes" element={<Personajes/>}/>
             <Route path="linajes" element={<Linajes/>}/>
-            <Route path="personajesDetail/:name" element={<PersonajesDetail/>}/>
-            <Route path="linajesDetail/:name" element={<LinajesDetail/>}/>
+            <Route path="personajes/:name" element={<PersonajesDetail/>}/>
+            <Route path="linajes/:name" element={<LinajesDetail/>}/>
             <Route path="cronologia" element={<Cronologia/>}/>
             <Route path="*" element={<Inicio/>}/>
 
@@ -28,8 +28,8 @@ function App() {
 
             <Route path="/personajes" component={Personajes}/>
             <Route path="/linajes" component={Linajes}/>
-            <Route path="/personajesDetail/:name" component={PersonajesDetail}/>
-            <Route path="/linajesDetail/:name" component={LinajesDetail}/>
+            <Route path="/personajes/:name" component={PersonajesDetail}/>
+            <Route path="/linajes/:name" component={LinajesDetail}/>
             <Route path="/cronologia" component={Cronologia}/>
 
         </Routes>
