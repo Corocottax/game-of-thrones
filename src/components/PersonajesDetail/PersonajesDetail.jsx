@@ -1,9 +1,29 @@
 import "./PersonajesDetail.scss"
-import { Link} from 'react-router-dom';
+import { Link, useParams} from 'react-router-dom';
+import { useState } from "react";
+import axios from "axios";
 
-const PersonajesDetail = ({character}) => {
+const PersonajesDetail = () => {
 
-    const { allegiances, appearances, siblings, titles } = character;
+    const Url = "https://api.got.show/api/show/characters/";
+
+    let { name } = useParams("name");
+    const [character, setCharacter] = useState({})
+
+    const getCharacterByName = async (name) => {
+
+        const res = await axios(Url + name);
+        console.log(res.data);
+        setCharacter(res.data)
+        console.log(character);
+
+    }
+
+    if (name){
+
+        setCharacter(getCharacterByName(name));
+
+    };
 
     return (
         <div>
@@ -24,7 +44,7 @@ const PersonajesDetail = ({character}) => {
 
                 <h3>ALIANZAS</h3>
                 <ul>
-                    {allegiances.map((alianza) => {
+                    {character.allegiances.map((alianza) => {
 
                         return (
 
@@ -40,7 +60,7 @@ const PersonajesDetail = ({character}) => {
 
                 <h3>APARICIONES</h3>
                 <ul>
-                    {appearances.map((aparicion) => {
+                    {character.appearances.map((aparicion) => {
 
                         return (
 
@@ -62,7 +82,7 @@ const PersonajesDetail = ({character}) => {
 
                 <h3>DESCENDIENTES</h3>
                 <ul>
-                    {siblings.map((descendiente) => {
+                    {character.siblings.map((descendiente) => {
 
                         return (
 
@@ -78,7 +98,7 @@ const PersonajesDetail = ({character}) => {
 
                 <h3>TITULOS</h3>
                 <ul>
-                    {titles.map((title) => {
+                    {character.titles.map((title) => {
 
                         return (
 
