@@ -1,32 +1,16 @@
-import React, { useEffect, useState } from 'react';
 import "./PersonajesDetail.scss"
-import axios from "axios"
-import { Link, useParams } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
-const PersonajesDetail = () => {
+const PersonajesDetail = ({character}) => {
 
-    const Url = "https://api.got.show/api/show/characters/";
-    const [character, setCharacter] = useState({});
-    let { name } = useParams("name");
-
-    const getCharactersByName = async (name) => {
-
-        const res = await axios(Url + name)
-        console.log(res);
-        setCharacter(res.data.results)
-
-    };
-
-    useEffect(() => {
-
-        getCharactersByName(name);
-
-    }, [name])
+    const { allegiances, appearances, siblings, titles } = character;
 
     return (
         <div>
 
             <Link to="/personajes">← Volver</Link>
+
+            {}
 
             <img src={character.image} alt={character.name} />
             <h2>{character.name}</h2>
@@ -40,7 +24,7 @@ const PersonajesDetail = () => {
 
                 <h3>ALIANZAS</h3>
                 <ul>
-                    {character.llegiances.map((alianza) => {
+                    {allegiances.map((alianza) => {
 
                         return (
 
@@ -56,7 +40,7 @@ const PersonajesDetail = () => {
 
                 <h3>APARICIONES</h3>
                 <ul>
-                    {character.appearances.map((aparicion) => {
+                    {appearances.map((aparicion) => {
 
                         return (
 
@@ -78,7 +62,7 @@ const PersonajesDetail = () => {
 
                 <h3>DESCENDIENTES</h3>
                 <ul>
-                    {character.siblings.map((descendiente) => {
+                    {siblings.map((descendiente) => {
 
                         return (
 
@@ -94,7 +78,7 @@ const PersonajesDetail = () => {
 
                 <h3>TITULOS</h3>
                 <ul>
-                    {character.titles.map((title) => {
+                    {titles.map((title) => {
 
                         return (
 
