@@ -6,14 +6,11 @@ import Linajes from './components/Linajes/Linajes';
 import LinajesDetail from './components/LinajesDetail/LinajesDetail';
 import Personajes from './components/Personajes/Personajes';
 import PersonajesDetail from './components/PersonajesDetail/PersonajesDetail';
-import Navbar from "./components/Inicio/Navbar"
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-
-        <Navbar />
 
         <Routes>
 
