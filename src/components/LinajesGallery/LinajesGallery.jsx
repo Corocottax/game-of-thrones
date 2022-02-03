@@ -6,9 +6,10 @@ export default function LinajesGallery({list}){
     return <div className="Gallery">
         {list.map(item => <figure key={item._id}>
             <Link to={generatePath("/linajes/:name", { name: item.name })}>
-            <img src={item.logoURL} alt={item.name} />
+            {item.logoURL ? (<img src={item.logoURL} alt={item.name}/>) :
+              (<img src="/got-house.png" alt="imagen rota"/>) }
             </Link>
-            <figcaption>
+            <figcaption className="Nombrecito">
                 {item.name}
             </figcaption>
         </figure>)}

@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState,} from "react";
+import {Link} from "react-router-dom";
 import "./Linajes.scss";
 import Navbar from "../Inicio/Navbar/Navbar";
 import Castillito from "../../shared/Castillito/Castillito";
@@ -21,11 +22,17 @@ export default function Linajes() {
   }, []);
 
   return (
-    <div>
-      <Castillito />
-      <Idiomas />
+    <>
+      <div className="divHead">
+          <Link to="/Inicio">🡰Volver</Link>
+        <figcaption className="casLen" >
+          <Castillito />
+          <Idiomas />
+        </figcaption>
+      </div>
+      <div>
       <LinajesGallery list={Casas} />
       <Navbar />
     </div>
-  );
+  </>);
 }
