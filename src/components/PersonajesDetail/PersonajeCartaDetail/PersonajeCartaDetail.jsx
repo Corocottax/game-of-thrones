@@ -50,7 +50,7 @@ const PersonajeCartaDetail = ({character, casas}) => {
         <div className="infoDetalle">
 
             <h3>ALIANZAS</h3>
-            <ul>
+            <ul className='ul'>
                 {(character && character.allegiances.length > 0) ? character.allegiances.map((alianza, index) => {
 
                     return (
@@ -66,7 +66,7 @@ const PersonajeCartaDetail = ({character, casas}) => {
         <div className="infoDetalle">
 
             <h3>APARICIONES</h3>
-            <ul>
+            <ul className='ul'>
                 {(character && character.appearances.length > 0) ? character.appearances.map((aparicion, index) => {
 
                     return (
@@ -89,7 +89,7 @@ const PersonajeCartaDetail = ({character, casas}) => {
         <div className="infoDetalle">
 
             <h3>DESCENDIENTES</h3>
-            <ul>
+            <ul className='ul'>
                 {(character && character.siblings.length > 0) ? character.siblings.map((descendiente, index) => {
 
                     return <li key={index}>{descendiente}</li>
@@ -101,7 +101,7 @@ const PersonajeCartaDetail = ({character, casas}) => {
         <div className="infoDetalle">
 
             <h3>TITULOS</h3>
-            <ul>
+            <ul className='ul'>
                 {(character && character.titles.length > 0) ? character.titles.map((title, index) => {
 
                     return (
