@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import { getCharacterByName } from "../../functions/Functions"
 import PersonajeCartaDetail from "./PersonajeCartaDetail/PersonajeCartaDetail";
 import NotFound from "./NotFound/NotFound";
+import Castillito from "../../shared/Castillito/Castillito";
+import Idiomas from "../../shared/Idiomas/Idiomas";
+import Volver from "../../shared/Volver/Volver";
 
 const PersonajesDetail = () => {
 
@@ -23,6 +26,13 @@ const PersonajesDetail = () => {
 
     return (
         <div>
+            <div className="header">
+                <Volver />
+                <div className="derecha">
+                    <Castillito />
+                    <Idiomas />
+                </div>
+            </div>
             {character ? <PersonajeCartaDetail character={character}/> : <NotFound />}
         </div>
     );

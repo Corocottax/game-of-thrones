@@ -1,13 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import "./PersonajeCartaDetail.scss"
 
 const PersonajeCartaDetail = ({character}) => {
   return (
   <div>
 
-    <Link to="/personajes">← Volver</Link>
-    
     <div className="cabecera">
         <img src={character.image} alt={character.name} />
         <h2>{character.name}</h2>
@@ -56,7 +53,7 @@ const PersonajeCartaDetail = ({character}) => {
         <div className="infoDetalle">
 
             <h3>PADRE</h3>
-            <p>{character.father}</p>
+            <p className='li'>{character.father}</p>
 
         </div>
         <div className="infoDetalle">
