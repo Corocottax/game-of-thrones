@@ -25,11 +25,11 @@ const PersonajeCartaDetail = ({character}) => {
 
             <h3>ALIANZAS</h3>
             <ul>
-                {(character && character.allegiances.length > 0) ? character.allegiances.map((alianza) => {
+                {(character && character.allegiances.length > 0) ? character.allegiances.map((alianza, index) => {
 
                     return (
 
-                        <li key={alianza}>{alianza}</li>
+                        <li key={index}>{alianza}</li>
 
                     )
 
@@ -41,11 +41,11 @@ const PersonajeCartaDetail = ({character}) => {
 
             <h3>APARICIONES</h3>
             <ul>
-                {(character && character.appearances.length > 0) ? character.appearances.map((aparicion) => {
+                {(character && character.appearances.length > 0) ? character.appearances.map((aparicion, index) => {
 
                     return (
 
-                        <li key={aparicion}>{aparicion}</li>
+                        <li key={index}>{aparicion}</li>
 
                     )
 
@@ -63,11 +63,11 @@ const PersonajeCartaDetail = ({character}) => {
 
             <h3>DESCENDIENTES</h3>
             <ul>
-                {(character && character.siblings.length > 0) ? character.siblings.map((descendiente) => {
+                {(character && character.siblings.length > 0) ? character.siblings.map((descendiente, index) => {
 
                     return (
 
-                        <li key={descendiente}>{descendiente}</li>
+                        <li key={index}>{descendiente}</li>
 
                     )
 
@@ -79,11 +79,11 @@ const PersonajeCartaDetail = ({character}) => {
 
             <h3>TITULOS</h3>
             <ul>
-                {(character && character.titles.length > 0) ? character.titles.map((title) => {
+                {(character && character.titles.length > 0) ? character.titles.map((title, index) => {
 
                     return (
 
-                        <li key={title}>{title}</li>
+                        <li key={index}>{title}</li>
 
                     )
 

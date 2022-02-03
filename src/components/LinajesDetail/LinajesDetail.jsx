@@ -43,9 +43,9 @@ const LinajesDetail = () => {
           </figcaption>
         </div>
         <div className="containerHouse">
-          {Linaje.map((house) =>(
+          {Linaje.map((house, index) =>(
             <>
-            <div className="contEsc" key={house.name}>
+            <div className="contEsc" key={index}>
               {house.logoURL ? (<img className="imgHouse" src={house.logoURL} alt={house.name}/>) :
               (<img className="imgHouse" src="/got-house.png" alt="imagen rota"/>) }
               <h2 className="h2Hous">{house.name}</h2>
@@ -69,8 +69,8 @@ const LinajesDetail = () => {
 
               <li className="liCont">
                 <h4 className="h4Title">ALIANZAS</h4>
-                {house.allegiance.map((alle)=>(
-                  <p className="pText" key={alle} >{alle}</p>
+                {house.allegiance.map((alle, index)=>(
+                  <p className="pText" key={index} >{alle}</p>
                   ))}
               </li>
 

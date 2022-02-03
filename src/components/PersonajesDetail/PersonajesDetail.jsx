@@ -19,7 +19,7 @@ const PersonajesDetail = () => {
 
             });
 
-    }, []);
+    }, [name]);
 
     return (
         <div>
