@@ -15,7 +15,36 @@ const PersonajeCartaDetail = ({character, casas}) => {
         <div className="infoDetalle">
 
             <h3>CASA</h3>
-            <img src="aqui va la casa con el nombre exactamente igual a character.house"  alt={character.house}/>
+            {casas && casas.map((casa) => {
+
+                if (casa.name === "Maesters") {
+
+                    return <img className='escudo' src="/got-house.png"  alt={character.house}/>
+
+                }
+
+                if (casa.name === character.house) {
+
+                    console.log(casa.logoURL)
+
+                    if (!casa.logoURL) {
+
+                        return <img className='escudo' src="/got-house.png"  alt={character.house}/>
+
+                    } else {
+
+                        return <img className='escudo' src={casa.logoURL}  alt={character.house}/>
+
+                    }
+
+                } else {
+
+                    return null
+
+                }
+
+            })}
+            
 
         </div>
         <div className="infoDetalle">
@@ -53,7 +82,8 @@ const PersonajeCartaDetail = ({character, casas}) => {
         <div className="infoDetalle">
 
             <h3>PADRE</h3>
-            <p className='li'>{character.father}</p>
+            {character.father ? <p className='li'>{character.father}</p> : <p className='li'>He went for cigarretes</p>}
+            
 
         </div>
         <div className="infoDetalle">
@@ -62,13 +92,9 @@ const PersonajeCartaDetail = ({character, casas}) => {
             <ul>
                 {(character && character.siblings.length > 0) ? character.siblings.map((descendiente, index) => {
 
-                    return (
+                    return <li key={index}>{descendiente}</li>
 
-                        <li key={index}>{descendiente}</li>
-
-                    )
-
-                }) : null}
+                }) : <p className='li'>No tiene descendientes</p>}
             </ul>
 
         </div>
@@ -84,7 +110,7 @@ const PersonajeCartaDetail = ({character, casas}) => {
 
                     )
 
-                }) : null}
+                }) : <p className='li'>No tiene títulos</p>}
             </ul>
 
         </div>
