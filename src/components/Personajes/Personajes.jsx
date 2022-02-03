@@ -27,18 +27,22 @@ const Personajes = () => {
         <Idiomas />
       </div>
 
+     
+      <div className="album">
+        {characters.map((character) => {
+          return (
+            <Link className="Link" to={generatePath("/personajes/:name", { name: character.name })}>
+              <div className="carta" style={{backgroundImage:'url('+ character.image+')'}}>
+                <h4 className="nombre">{character.name}</h4>
+                </div>
+            </Link>
+
+          );
+        })}
+      </div>
       <Navbar />
-      {characters.map((character) => {
-        return (
-            <Link className="enlaceCharactersDetail" to={generatePath("/personajes/:name", { name: character.name })} >
-          <div className="cartita">
-            <img src={character.image} alt={character.name} />
-            <h1 className="nombre">{character.name}</h1>
-          </div>
-          </Link>
-        );
-      })}
     </div>
+    
   );
 };
 
