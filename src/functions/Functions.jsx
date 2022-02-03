@@ -1,7 +1,5 @@
-import axios from "axios";
-
 const UrlCharacters = "https://api.got.show/api/show/characters/";
-const UrlLocations = "https://api.got.show/api/show/houses";
+const UrlHouses = "https://api.got.show/api/show/houses";
 
 export const getCharacterByName = async (name) => {
 
@@ -19,7 +17,15 @@ export const getCharacterByName = async (name) => {
   
 export const getHouses = async () => {
 
-    const res = await axios("https://api.got.show/api/show/houses");
-    return (res.data);
+    const res = await fetch(`${UrlHouses}`);
+    if (res.ok) {
+
+        return res.json();
+
+    } else {
+
+        return [];
+
+    }
 
 }

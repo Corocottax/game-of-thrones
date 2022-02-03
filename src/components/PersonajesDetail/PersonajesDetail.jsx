@@ -1,7 +1,7 @@
 import "./PersonajesDetail.scss"
 import { useParams} from 'react-router-dom';
 import React, { useEffect, useState } from "react";
-import { getCharacterByName } from "../../functions/Functions"
+import { getCharacterByName, getHouses } from "../../functions/Functions"
 import PersonajeCartaDetail from "./PersonajeCartaDetail/PersonajeCartaDetail";
 import NotFound from "./NotFound/NotFound";
 import Castillito from "../../shared/Castillito/Castillito";
@@ -12,6 +12,7 @@ const PersonajesDetail = () => {
 
     let { name } = useParams("name");
     const [character, setCharacter] = useState();
+    const [casas, setCasas] = useState();
 
     useEffect(() => {
 
@@ -20,7 +21,13 @@ const PersonajesDetail = () => {
 
                 setCharacter(data);
 
-            });
+        });
+
+        getHouses().then((data) => {
+
+            setCasas(data);
+
+        });
 
     }, [name]);
 
@@ -33,7 +40,7 @@ const PersonajesDetail = () => {
                     <Idiomas />
                 </div>
             </div>
-            {character ? <PersonajeCartaDetail character={character}/> : <NotFound />}
+            {character ? <PersonajeCartaDetail character={character} casas={casas}/> : <NotFound />}
         </div>
     );
     

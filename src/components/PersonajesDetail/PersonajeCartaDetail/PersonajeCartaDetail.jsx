@@ -1,7 +1,7 @@
 import React from 'react';
 import "./PersonajeCartaDetail.scss"
 
-const PersonajeCartaDetail = ({character}) => {
+const PersonajeCartaDetail = ({character, casas}) => {
   return (
   <div>
 
