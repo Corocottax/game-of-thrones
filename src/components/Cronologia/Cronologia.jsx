@@ -1,26 +1,137 @@
-import React from 'react';
-import "./Cronologia.scss"
-import Navbar from "../Inicio/Navbar/Navbar"
-import Castillito from "../../shared/Castillito/Castillito"
-import Idiomas from "../../shared/Idiomas/Idiomas"
+import React from "react";
+import "./Cronologia.scss";
+import Navbar from "../Inicio/Navbar/Navbar";
+import Castillito from "../../shared/Castillito/Castillito";
+import Idiomas from "../../shared/Idiomas/Idiomas";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-const Cronologia = () => {
-    return (
-        <div>
+let charactersOrden = [];
+let characterPar = [];
+let characterIm = [];
 
-            <div className='inicio-header'>
+export function Cronologia() {
 
-                <Castillito />
-                <Idiomas />
+  const [charPar, setCharPar] = useState([]);
+  const [charIm, setCharIm] = useState([]);
+  const [highToLow, setHighToLow] = useState(true);
 
-            </div>
+  const getCharacters = () => {
+    axios("https://api.got.show/api/show/characters/").then((res) => {
+      charactersOrden = [];
+      for (const character of res.data) {
+        if (character.age) {
+          if (character.age.age) {
+            charactersOrden.push(character);
+          }
+        }
+      }
+      console.log(charactersOrden);
 
-            <h1>Cronologia works!</h1>
+      paintOrderCharacters();
+      setHighToLow(false);
+    });
+  };
 
-            <Navbar />
+  const paintOrderCharacters = () => {
+    if (highToLow) {
+      charactersOrden.sort((a, b) => a.age.age - b.age.age);
+    } else {
+      charactersOrden.sort((a, b) => b.age.age - a.age.age);
+    }
 
-        </div>
-    );
+    characterPar = [];
+    characterIm = [];
+
+    for (let i = 0; i < charactersOrden.length; i++) {
+      if (i % 2 === 0) {
+        characterPar.push(charactersOrden[i]);
+      } else {
+        characterIm.push(charactersOrden[i]);
+      }
+    }
+    console.log(charPar);
+    console.log(charIm);
+  
+    setCharPar(characterPar);
+    setCharIm(characterIm);  
+
 };
+  useEffect(()=>{
+
+    getCharacters();
+  }, []);
+
+  const changeOrden = () => {
+    if (highToLow) {
+      setHighToLow(false);
+      paintOrderCharacters();
+    } else {
+      setHighToLow(true);
+      paintOrderCharacters();
+    }
+  };
+
+
+  console.log(characterPar);
+  console.log(characterIm);
+
+
+
+  return (
+    <div className="crono">
+      <Castillito />
+
+      <Idiomas />
+
+      <div className="crono__div">
+        <div className="crono__flecha">
+          /* <button onClick={changeOrden} className="c-chrono__button">
+              {" "}
+              {charPar[0] ? charPar[0].age.age : "0"}{" "}
+            </button> */
+
+          <img
+            src="https://rutasdelconflicto.com/nini-cardozo-empoderadora-de-mujeres-araucanas/img/flecha.png"
+            alt=""
+            className={
+              highToLow ? "crono__vector" : "crono crono__vector--invert"
+            }
+          />
+        </div>
+        <hr className="crono__separator"></hr>
+        <div className="crono__cards">
+          <div className="crono__column">
+            {charPar.map((item, i) => (
+              <div className="crono__character" key={i}>
+                <p className="crono__info">{item.age.age}</p>
+                <p className="crono__info">{item.name}</p>
+                <img className="crono__img" src={item.image} alt={item.name} />
+              </div>
+            ))}
+          </div>
+
+          <hr className="crono__separator2"></hr>
+
+          <div className="crono__column c-crono__column--right">
+            {charIm.map((item, i) => (
+              <div className="crono__character" key={i}>
+                <p className="crono__info">{item.age.age}</p>
+                <p className="crono__info">{item.name}</p>
+                <img
+                  className="crono__photo"
+                  src={item.image}
+                  alt={item.name}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Navbar />
+    </div>
+  );
+}
 
 export default Cronologia;
