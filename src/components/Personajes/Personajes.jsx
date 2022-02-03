@@ -32,9 +32,12 @@ const Personajes = () => {
         {characters.map((character) => {
           return (
             <Link className="Link" to={generatePath("/personajes/:name", { name: character.name })}>
-              <div className="carta" style={{backgroundImage:'url('+ character.image+')'}}>
-                <h4 className="nombre">{character.name}</h4>
-                </div>
+              
+              {character.image ? <div className="carta" style={{backgroundImage:'url('+ character.image+')'}}>  <h4 className="nombre">{character.name}</h4>
+                </div>:
+                <div className="carta" style={{backgroundImage:'url(/got-personaje.png)'}}>  <h4 className="nombre">{character.name}</h4>
+                </div>}
+               
             </Link>
 
           );
