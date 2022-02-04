@@ -86,7 +86,7 @@ export function Cronologia() {
 
       <div className="crono__div">
         <div className="crono__flecha">
-          /* <button onClick={changeOrden} className="c-chrono__button">
+          /* <button onClick={changeOrden} className="crono__button">
               {" "}
               {charPar[0] ? charPar[0].age.age : "0"}{" "}
             </button> */

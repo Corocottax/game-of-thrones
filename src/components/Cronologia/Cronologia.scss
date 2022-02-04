@@ -1,0 +1,46 @@
+.crono {
+  display: flex;
+  align-items: center;
+
+  &__div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-height: 70vh;
+    position: absolute;
+    top: 7rem;
+    overflow-y: scroll ;
+    overflow-x:hidden;
+  }
+
+  ::-webkit-scrollbar{
+    width: 4px;
+    background: #443d3d;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    height: 85px;
+    background: white;
+    border-radius: 10px;
+}
+&__button{
+    width: 3rem;
+    height: 3rem;
+    border-radius:2px white 100%;
+    background-color: black;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+}
+&__flecha{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 3.5%;
+}
+
+}
