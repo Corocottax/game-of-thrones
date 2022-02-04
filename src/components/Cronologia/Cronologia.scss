@@ -1,6 +1,27 @@
+
+
+
+
 .crono {
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
+  
+  &__header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 4vw;
+  
+  }
+  
+  &__derecha {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
 
   &__div{
     display: flex;
@@ -8,26 +29,17 @@
     align-items: center;
     width: 90%;
     max-height: 70vh;
-    position: absolute;
     top: 7rem;
     overflow-y: scroll ;
     overflow-x:hidden;
+    margin-left: 3vh;
   }
 
-  ::-webkit-scrollbar{
-    width: 4px;
-    background: #443d3d;
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb{
-    height: 85px;
-    background: white;
-    border-radius: 10px;
-}
+ 
 &__button{
     width: 3rem;
     height: 3rem;
-    border-radius:2px white 100%;
+    border-radius: white 100%;
     background-color: black;
     justify-content: center;
     display: flex;
@@ -42,5 +54,61 @@
     position: absolute;
     width: 3.5%;
 }
+
+&__separator{
+  height: 10vh;
+  background-color: white;
+  width: 5%;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+&__separator2{
+  margin: 0;
+  background-color: white;
+  width: 0.2vw;
+  border: none;
+}
+
+&__cards{
+  display: flex;
+  position: relative;
+  top: 14vh;
+} 
+
+&__column{
+  text-align: center;
+  width: 50%;
+}
+
+&__right{
+  text-align: center;
+  margin-top: 15%;
+
+}
+
+
+&__character{
+  border-bottom: 3px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+&__info{
+  margin: 1%;
+}
+
+&__photo{
+  width: 50%;
+  height: 12vh;
+  border-radius: 50%;
+  margin-bottom:40%;
+}
+
+
+
 
 }

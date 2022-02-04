@@ -5,6 +5,8 @@ import Castillito from "../../shared/Castillito/Castillito";
 import Idiomas from "../../shared/Idiomas/Idiomas";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import SimpleBar from 'simplebar-react'; 
+import 'simplebar/dist/simplebar.min.css'
 
 let charactersOrden = [];
 let characterPar = [];
@@ -79,41 +81,42 @@ export function Cronologia() {
 
 
   return (
+    <div className="crono-total">
     <div className="crono">
+      <div className="crono__header">
+        <div className="crono__derecha">
       <Castillito />
 
       <Idiomas />
-
+      </div>
+      </div>
       <div className="crono__div">
+      
         <div className="crono__flecha">
-          /* <button onClick={changeOrden} className="crono__button">
+           <button onClick={changeOrden} className="crono__button">
               {" "}
               {charPar[0] ? charPar[0].age.age : "0"}{" "}
-            </button> */
+            </button> 
 
-          <img
-            src="https://rutasdelconflicto.com/nini-cardozo-empoderadora-de-mujeres-araucanas/img/flecha.png"
-            alt=""
-            className={
-              highToLow ? "crono__vector" : "crono crono__vector--invert"
-            }
-          />
+         
         </div>
+        
         <hr className="crono__separator"></hr>
+        
         <div className="crono__cards">
           <div className="crono__column">
             {charPar.map((item, i) => (
               <div className="crono__character" key={i}>
                 <p className="crono__info">{item.age.age}</p>
                 <p className="crono__info">{item.name}</p>
-                <img className="crono__img" src={item.image} alt={item.name} />
+                <img className="crono__photo" src={item.image} alt={item.name} />
               </div>
             ))}
           </div>
 
           <hr className="crono__separator2"></hr>
 
-          <div className="crono__column c-crono__column--right">
+          <div className="crono__right">
             {charIm.map((item, i) => (
               <div className="crono__character" key={i}>
                 <p className="crono__info">{item.age.age}</p>
@@ -126,10 +129,14 @@ export function Cronologia() {
               </div>
             ))}
           </div>
+          
         </div>
+        
       </div>
+      
 
       <Navbar />
+    </div>
     </div>
   );
 }
