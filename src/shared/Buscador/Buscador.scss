@@ -15,6 +15,14 @@
     background-color: transparent;
     border: none;
     font-size: 20px;
+    width: 100%;
+    color: white;
+
+    &:focus {
+
+        outline: none;
+
+    }
 
 }
 
