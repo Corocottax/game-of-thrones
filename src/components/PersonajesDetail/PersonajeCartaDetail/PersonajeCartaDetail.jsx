@@ -1,5 +1,7 @@
 import React from 'react';
 import "./PersonajeCartaDetail.scss"
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 
 const PersonajeCartaDetail = ({character, casas}) => {
 
@@ -50,33 +52,37 @@ const PersonajeCartaDetail = ({character, casas}) => {
         <div className="infoDetalle">
 
             <h3>ALIANZAS</h3>
+            <SimpleBar className='barra' style={{ maxHeight: 200 }}>
             <ul className='ul'>
                 {(character && character.allegiances.length > 0) ? character.allegiances.map((alianza, index) => {
 
                     return (
 
-                        <li key={index}>{alianza}</li>
+                        <li className='li' key={index}>{alianza}</li>
 
                     )
 
                 }) : null}
             </ul>
+            </SimpleBar>
 
         </div>
         <div className="infoDetalle">
 
             <h3>APARICIONES</h3>
+            <SimpleBar className='barra' style={{ maxHeight: 200 }}>
             <ul className='ul'>
                 {(character && character.appearances.length > 0) ? character.appearances.map((aparicion, index) => {
 
                     return (
 
-                        <li key={index}>{aparicion}</li>
+                        <li className='li' key={index}>{aparicion}</li>
 
                     )
 
                 }) : null}
             </ul>
+            </SimpleBar>
 
         </div>
         <div className="infoDetalle">
@@ -89,29 +95,33 @@ const PersonajeCartaDetail = ({character, casas}) => {
         <div className="infoDetalle">
 
             <h3>DESCENDIENTES</h3>
+            <SimpleBar className='barra' style={{ maxHeight: 200 }}>
             <ul className='ul'>
                 {(character && character.siblings.length > 0) ? character.siblings.map((descendiente, index) => {
 
-                    return <li key={index}>{descendiente}</li>
+                    return <li className='li' key={index}>{descendiente}</li>
 
                 }) : <p className='li'>No tiene descendientes</p>}
             </ul>
+            </SimpleBar>
 
         </div>
         <div className="infoDetalle">
 
             <h3>TITULOS</h3>
+            <SimpleBar className='barra' style={{ maxHeight: 200 }}>
             <ul className='ul'>
                 {(character && character.titles.length > 0) ? character.titles.map((title, index) => {
 
                     return (
 
-                        <li key={index}>{title}</li>
+                        <li className='li' key={index}>{title}</li>
 
                     )
 
                 }) : <p className='li'>No tiene títulos</p>}
             </ul>
+            </SimpleBar>
 
         </div>
 

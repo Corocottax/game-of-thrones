@@ -6,6 +6,8 @@ import Castillito from "../../shared/Castillito/Castillito";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { generatePath } from "react-router-dom";
+/* import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css'; */
 
 const Personajes = () => {
   const [characters, setCharacters] = useState([]);
@@ -27,22 +29,23 @@ const Personajes = () => {
         <Idiomas />
       </div>
 
-     
-      <div className="album">
-        {characters.map((character) => {
-          return (
-            <Link className="Link" to={generatePath("/personajes/:name", { name: character.name })}>
-              
-              {character.image ? <div className="carta" style={{backgroundImage:'url('+ character.image+')'}}>  <h4 className="nombre">{character.name}</h4>
-                </div>:
-                <div className="carta" style={{backgroundImage:'url(/got-personaje.png)'}}>  <h4 className="nombre">{character.name}</h4>
-                </div>}
-               
-            </Link>
+        <div className="album">
+          
+            {characters.map((character) => {
+              return (
+                <Link className="Link" to={generatePath("/personajes/:name", { name: character.name })}>
+                  
+                  {character.image ? <div className="carta" style={{backgroundImage:'url('+ character.image+')'}}>  <h4 className="nombre">{character.name}</h4>
+                    </div>:
+                    <div className="carta" style={{backgroundImage:'url(/got-personaje.png)'}}>  <h4 className="nombre">{character.name}</h4>
+                    </div>}
+                  
+                </Link>
 
-          );
-        })}
-      </div>
+              );
+            })}
+      
+        </div>
       <Navbar />
     </div>
     
