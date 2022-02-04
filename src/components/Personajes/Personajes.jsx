@@ -6,8 +6,8 @@ import Castillito from "../../shared/Castillito/Castillito";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { generatePath } from "react-router-dom";
-/* import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css'; */
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 
 const Personajes = () => {
   const [characters, setCharacters] = useState([]);
@@ -29,6 +29,8 @@ const Personajes = () => {
         <Idiomas />
       </div>
 
+      <div className="padre">
+      <SimpleBar className='barra' style={{ maxHeight: `75vh`, width: "90%"}}>
         <div className="album">
           
             {characters.map((character) => {
@@ -46,6 +48,8 @@ const Personajes = () => {
             })}
       
         </div>
+      </SimpleBar>
+      </div>
       <Navbar />
     </div>
     

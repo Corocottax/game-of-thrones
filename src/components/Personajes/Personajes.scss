@@ -5,12 +5,21 @@
    justify-content:center;
    align-content: flex-start;
    flex-wrap: wrap;
-   overflow-y: scroll;
-   max-height: 75vh;
    margin-bottom: 2.5vh;
+   width: 100%;
    
    }
-   
+
+   .padre {
+
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px 0px;
+
+   }
+
    .carta{
       display: flex;
       align-items: end;
