@@ -1,19 +1,17 @@
 .Gallery img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 255px;
   object-fit: contain;
 }
 
 .Gallery {
   margin: 5%;
-  padding-right: 3%;
-  padding-left: 3%;
   text-align: center;
   display: grid;
-  gap: 2.5rem;
+  gap: 1rem;
   grid-auto-flow: dense;
-  grid-auto-rows: 28rem;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  grid-auto-rows: 20.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 2fr));
 }
 
 featured {
@@ -22,5 +20,5 @@ featured {
 .Nombrecito {
   
   width: 100%;
-  text-align: center;
+  object-fit: contain;
   }
