@@ -1,9 +1,13 @@
 import { generatePath,Link } from "react-router-dom"
 import "./LinajesGallery.scss";
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
 
 export default function LinajesGallery({list}){
     console.log(list)
-    return <div className="Gallery">
+    return (
+    <SimpleBar className='barra' style={{maxHeight: `75vh`, width: "98%"}}>
+    <div className="Gallery">
         {list.map(item => <figure key={item._id}>
             <Link to={generatePath("/linajes/:name", { name: item.name })}>
             {item.logoURL ? (<img src={item.logoURL} alt={item.name}/>) :
@@ -14,4 +18,6 @@ export default function LinajesGallery({list}){
             </figcaption>
         </figure>)}
     </div>
+    </SimpleBar>
+    )
 }
