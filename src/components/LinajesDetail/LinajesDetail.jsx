@@ -13,6 +13,7 @@ import  'simplebar/src/simplebar.css' ;
 const LinajesDetail = () => {
     let { name } = useParams("name");
     const [Linaje, setLinaje] = useState([]);
+    const personaje = false;
 
     const getLineDetail = async (name) => {
         const res = await axios("https://api.got.show/api/show/houses/" + name)
@@ -30,7 +31,7 @@ const LinajesDetail = () => {
     return (
       <>
         <div className="header">
-                <Volver />
+                <Volver personaje={personaje}/>
                 <div className="derecha">
                     <Castillito />
                     <Idiomas />
