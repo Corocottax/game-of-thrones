@@ -13,6 +13,7 @@ const PersonajesDetail = () => {
     let { name } = useParams("name");
     const [character, setCharacter] = useState();
     const [casas, setCasas] = useState();
+    const personaje = true;
 
     useEffect(() => {
 
@@ -34,7 +35,7 @@ const PersonajesDetail = () => {
     return (
         <div>
             <div className="header">
-                <Volver />
+                <Volver personaje={personaje}/>
                 <div className="derecha">
                     <Castillito />
                     <Idiomas />

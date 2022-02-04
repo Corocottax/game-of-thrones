@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { generatePath } from "react-router-dom";
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
+import Buscador from "../../shared/Buscador/Buscador";
 
 const Personajes = () => {
   const [characters, setCharacters] = useState([]);
@@ -24,9 +25,12 @@ const Personajes = () => {
 
   return (
     <div>
-      <div className="inicio-header">
-        <Castillito />
-        <Idiomas />
+      <div className="header">
+        <Buscador />
+        <div className="derecha">
+          <Castillito />
+          <Idiomas />
+        </div>
       </div>
 
       <div className="padre">
