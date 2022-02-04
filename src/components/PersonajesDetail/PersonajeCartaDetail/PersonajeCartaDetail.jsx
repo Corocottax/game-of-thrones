@@ -2,6 +2,9 @@ import React from 'react';
 import "./PersonajeCartaDetail.scss"
 
 const PersonajeCartaDetail = ({character, casas}) => {
+
+    let encontrada = false;
+
   return (
   <div>
 
@@ -15,25 +18,21 @@ const PersonajeCartaDetail = ({character, casas}) => {
         <div className="infoDetalle">
 
             <h3>CASA</h3>
-            {casas && casas.map((casa) => {
-
-                if (casa.name === "Maesters") {
-
-                    return <img className='escudo' src="/got-house.png"  alt={character.house}/>
-
-                }
+            {casas && casas.map((casa, index) => {
 
                 if (casa.name === character.house) {
 
-                    console.log(casa.logoURL)
+                    encontrada = true;
 
                     if (!casa.logoURL) {
 
-                        return <img className='escudo' src="/got-house.png"  alt={character.house}/>
+                        console.log("no tiene escudo")
+                        return <img key={index} className='escudo' src="/got-house.png"  alt={character.house}/>
 
                     } else {
 
-                        return <img className='escudo' src={casa.logoURL}  alt={character.house}/>
+                        console.log("tiene escudo")
+                        return <img key={index} className='escudo' src={casa.logoURL}  alt={character.house}/>
 
                     }
 
@@ -44,7 +43,8 @@ const PersonajeCartaDetail = ({character, casas}) => {
                 }
 
             })}
-            
+
+            {!encontrada && <img className='escudo' src="/got-house.png"  alt={character.house}/>}
 
         </div>
         <div className="infoDetalle">
