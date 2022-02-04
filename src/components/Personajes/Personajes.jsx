@@ -50,3 +50,4 @@ const Personajes = () => {
 };
 
 export default Personajes;
+ 
