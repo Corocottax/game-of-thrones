@@ -7,6 +7,7 @@ import "./LinajesDetail.scss";
 import Volver from '../../shared/Volver/Volver'
 import SimpleBar from 'simplebar-react'; 
 import 'simplebar/dist/simplebar.min.css';
+import 'simplebar-react/dist/simplebar.min.css';
 
 
 const LinajesDetail = () => {

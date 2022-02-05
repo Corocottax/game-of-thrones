@@ -7,6 +7,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import SimpleBar from 'simplebar-react'; 
 import 'simplebar/dist/simplebar.min.css';
+import 'simplebar-react/dist/simplebar.min.css';
 
 let charactersOrden = [];
 let characterPar = [];

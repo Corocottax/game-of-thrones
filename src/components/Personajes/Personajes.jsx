@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { generatePath } from "react-router-dom";
 import SimpleBar from 'simplebar-react'; 
 import 'simplebar/dist/simplebar.min.css';
+import 'simplebar-react/dist/simplebar.min.css';
 import Buscador from "../../shared/Buscador/Buscador";
 
 const Personajes = ({inputValue, setInputValue}) => {
