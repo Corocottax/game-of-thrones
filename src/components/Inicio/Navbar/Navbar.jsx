@@ -12,7 +12,7 @@ const Footer = () => {
             </NavLink>
 
             <NavLink to="/linajes" activeclassname={"active"} className={({isActive}) => (isActive ? "active" : "inactive")}>
-            <FormattedMessage id="Houses" defaultMessage="Casas"/>
+            <FormattedMessage id="house" defaultMessage="Casas"/>
             </NavLink>
 
             <NavLink to="/cronologia" activeclassname={"active"} className={({isActive}) => (isActive ? "active" : "inactive")}>
