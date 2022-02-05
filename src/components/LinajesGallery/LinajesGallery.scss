@@ -2,23 +2,24 @@
   width: 250px;
   height: 255px;
   object-fit: contain;
-}
+  }
 
 .Gallery {
-  margin: 5%;
   text-align: center;
-  display: grid;
-  gap: 1rem;
-  grid-auto-flow: row dense;
-  grid-auto-rows: 20.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 2fr));
+  display: flex;
+  flex-direction: row;
+  row-gap: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em; 
+  margin-right:1%;
 }
 
-featured {
-  grid-column: span 2;
-}
 .Nombrecito {
+  font-size: 11.5px;
+  text-justify:justify;
+  margin:2%;
+  width: 95.5%;
   
-  width: 100%;
-  object-fit: contain;
-  }
+}
