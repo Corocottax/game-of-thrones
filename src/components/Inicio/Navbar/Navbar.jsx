@@ -6,9 +6,9 @@ const Footer = () => {
     return (
         <nav>
 
-            <NavLink to="/personajes" activeclassname={"active"} className="navbarAnchord">Personajes</NavLink>
-            <NavLink to="/linajes" activeclassname={"active"} className="navbarAnchord">Casas</NavLink>
-            <NavLink to="/cronologia" activeclassname={"active"} className="navbarAnchord">Cronologia</NavLink>
+            <NavLink to="/personajes" activeclassname={"active"} className={({isActive}) => (isActive ? "active" : "inactive")}>Personajes</NavLink>
+            <NavLink to="/linajes" activeclassname={"active"} className={({isActive}) => (isActive ? "active" : "inactive")}>Casas</NavLink>
+            <NavLink to="/cronologia" activeclassname={"active"} className={({isActive}) => (isActive ? "active" : "inactive")}>Cronologia</NavLink>
 
         </nav>
     );

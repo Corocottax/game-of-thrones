@@ -7,8 +7,18 @@ nav {
 
 }
 
-.navbarAnchord {
+.active {
 
+    border-bottom: 2px solid white;
+    color: white;
+    margin: 20px;
+    font-size: 2.5vw;
+
+}
+
+.inactive {
+
+    border: none;
     color: white;
     margin: 20px;
     font-size: 2.5vw;
