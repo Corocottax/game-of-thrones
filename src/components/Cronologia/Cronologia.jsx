@@ -90,6 +90,7 @@ export function Cronologia() {
       <Idiomas />
       </div>
       </div>
+      <SimpleBar className='barra'>
       <div className="crono__div">
       
         <div className="crono__flecha">
@@ -134,7 +135,7 @@ export function Cronologia() {
         
       </div>
       
-
+      </SimpleBar>
       <Navbar />
     </div>
     </div>

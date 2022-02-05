@@ -37,14 +37,17 @@ const Personajes = () => {
       <SimpleBar className='barra' style={{ maxHeight: `75vh`, width: "90%"}}>
         <div className="album">
           
-            {characters.map((character) => {
+            {characters.map((character, index) => {
               return (
-                <Link className="Link" to={generatePath("/personajes/:name", { name: character.name })}>
-                  
-                  {character.image ? <div className="carta" style={{backgroundImage:'url('+ character.image+')'}}>  <h4 className="nombre">{character.name}</h4>
-                    </div>:
-                    <div className="carta" style={{backgroundImage:'url(/got-personaje.png)'}}>  <h4 className="nombre">{character.name}</h4>
-                    </div>}
+                <Link key={index} className="Link" to={generatePath("/personajes/:name", { name: character.name })}>
+
+                {(!character.image || character.image === ("https://vignette.wikia.nocookie.net/gameofthrones/images/1/1b/Grenn.jpg/revision/latest?cb=20180702193920") || character.image === ("https://vignette.wikia.nocookie.net/gameofthrones/images/9/96/Oberyn-Martell-house-martell-37118334-2832-4256.jpg/revision/latest/scale-to-width-down/333?cb=20150815065729")) ?
+                
+                <div className="carta" style={{backgroundImage:'url(/got-personaje.png)'}}>  <h4 className="nombre">{character.name}</h4></div> :
+
+                <div className="carta" style={{backgroundImage:'url('+ character.image+')'}}>  <h4 className="nombre">{character.name}</h4></div>
+                
+                }
                   
                 </Link>
 
