@@ -6,8 +6,7 @@
 .pnp.js
 
 #exceptions 
-!/node-modules/simplebar
-!/node-modules/simplebar-react
+
 
 # testing
 /coverage
