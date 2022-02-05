@@ -8,8 +8,8 @@ const Idiomas = () => {
   return (
   <div className='idiomitas'>
 
-    <button className='banderitaEs'  value={"es"} onClick={context.selectLanguage} />
-    <button className='banderitaEn'   value={"en"} onClick={context.selectLanguage} />
+    <button className='banderitaEs' type='button'  value={"es"} onClick={context.selectLanguage}></button>
+    <button className='banderitaEn' type='button' value={"en"} onClick={context.selectLanguage}></button>
 
   </div>
   );
