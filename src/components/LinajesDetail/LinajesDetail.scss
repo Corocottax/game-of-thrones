@@ -26,13 +26,16 @@
     align-items: center;
 
 }
-
+.allContain{
+    max-width:100%;
+}
 .containerHouse{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content:center;
     min-height: 88vh;
+    max-width: 100%;
 }
 .ulDetail{
     display: flex;
@@ -40,7 +43,6 @@
     justify-content: center;
     flex-wrap: wrap;
     width:100%;
-    margin:2%;
 }
 
 .imgHouse{
@@ -56,7 +58,7 @@
     width:200px;
     min-height:20vh;
     text-align: center;
-    margin:0 1%;
+    margin:2% 1%;
 }
 
 .h4Title{

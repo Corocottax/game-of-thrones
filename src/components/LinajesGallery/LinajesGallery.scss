@@ -9,7 +9,7 @@
   text-align: center;
   display: grid;
   gap: 1rem;
-  grid-auto-flow: dense;
+  grid-auto-flow: row dense;
   grid-auto-rows: 20.5rem;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 2fr));
 }

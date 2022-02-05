@@ -5,9 +5,9 @@ import Castillito from "../../shared/Castillito/Castillito";
 import Idiomas from "../../shared/Idiomas/Idiomas";
 import "./LinajesDetail.scss";
 import Volver from '../../shared/Volver/Volver'
-import SimpleBar from 'simplebar-react'; 
-import 'simplebar/dist/simplebar.min.css';
-import 'simplebar-react/dist/simplebar.min.css';
+import SimpleBar from "simplebar-react";
+import  'simplebar/src/simplebar.css' ;
+
 
 
 const LinajesDetail = () => {
@@ -18,9 +18,9 @@ const LinajesDetail = () => {
     const getLineDetail = async (name) => {
         const res = await axios("https://api.got.show/api/show/houses/" + name)
         setLinaje(res.data)
-        console.log(setLinaje)
+        // console.log(setLinaje)
       }
-      console.log(Linaje);
+      // console.log(Linaje);
 
       useEffect(() => {
 
@@ -36,11 +36,11 @@ const LinajesDetail = () => {
                     <Castillito />
                     <Idiomas />
                 </div>
-            </div>
-        <div className="containerHouse">
-          {Linaje.map((house, index) =>(
-            <>
-            <div className="contEsc" key={index}>
+        </div>
+        
+          {Linaje.map((house) =>(
+            <div className="containerHouse" key={house._id}>
+            <div className="contEsc">
               {house.logoURL ? (<img className="imgHouse" src={house.logoURL} alt={house.name}/>) :
               (<img className="imgHouse" src="/got-house.png" alt="imagen rota"/>) }
               <h2 className="h2Hous">{house.name}</h2>
@@ -51,64 +51,65 @@ const LinajesDetail = () => {
           
               <li className="liCont">
                 <h4 className="h4Title">LEMA</h4>
-                <SimpleBar className='barra' style={{ maxHeight: 200 }}>
+              <SimpleBar className='barra' style={{ maxHeight: 200, maxWidth: 200 }}>
                 <div>
                   {house.words ? (<p className="pText">{house.words}</p>):
                   (<p className="pText">does not contain slogan</p>)}
                 </div>
-                </SimpleBar>
+              </SimpleBar>
               </li>
            
 
             
               <li className="liCont">
                 <h4 className="h4Title">SEDE</h4>
-                <SimpleBar className='barra' style={{ maxHeight: 200 }}>
+              <SimpleBar className='barra' style={{ maxHeight: 200, maxWidth: 200 }}>
                 <div>
-                {(house.seat.length > 0 ) ? (house.seat.map((set, index)=>
+                {(house.seat.length > 0 ) ? (house.seat.map((set, index) => 
+
                 <p className="pText" key={index}>{set}</p>   
-                  )) : (<p className="pText">is not based</p>)} 
+                )) : (<p className="pText">is not based</p>)} 
                   </div>
-                  </SimpleBar>
+              </SimpleBar>
               </li>
             
 
             
               <li className="liCont">
                 <h4 className="h4Title">REGION</h4>
-                <SimpleBar className='barra' style={{ maxHeight: 200 }}>
+              <SimpleBar className='barra' style={{ maxHeight: 200 }}>
                 <div>
                 {(house.region.length > 0 ) ? (house.region.map((reg, index)=>(
                   <p className="pText" key={index} >{reg}</p>
                   ))) : (<p className="pText">contains no region</p>)}
                 </div>
-                </SimpleBar>
+              </SimpleBar>
               </li>
             
 
             
               <li className="liCont">
                 <h4 className="h4Title">ALIANZAS</h4>
-                <SimpleBar className='barra' style={{ maxHeight: 200 }}>
+              <SimpleBar className='barra' style={{ maxHeight: 200 }}>
                 <div>
                 {(house.allegiance.length > 0 ) ? (house.allegiance.map((alle, index)=>(
                   <p className="pText" key={index} >{alle}</p>
                   ))) : (<p className="pText">does not contain alliances</p>)}
                   </div>
-                  </SimpleBar>
+              </SimpleBar>
               </li>
             
 
             
               <li className="liCont">
                 <h4 className="h4Title">RELIGIONES</h4>
-                <SimpleBar className='barra' style={{ maxHeight: 200 }}>
+              <SimpleBar className='barra' style={{ maxHeight: 200 }}>
                 <div>
                 {(house.religion.length > 0 ) ? (house.religion.map((relig, index)=>(
                   <p className="pText" key={index} >{relig}</p>
                   ))) : (<p className="pText">does not contain religions</p>)}
                   </div>
-                </SimpleBar>  
+              </SimpleBar>  
               </li>
             
 
@@ -118,9 +119,9 @@ const LinajesDetail = () => {
               </li>
             </ul>
 
-            </>
+            </div>
           ))}
-        </div>
+        
         </>
     );
 };
