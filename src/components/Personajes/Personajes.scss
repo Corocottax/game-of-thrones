@@ -20,6 +20,41 @@
 
    }
 
+   .cartaPredefinida {
+
+      display: flex;
+      align-items: end;
+      width: 200px;
+      height: 250px;
+      background: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin: 20px;
+      
+        h4{
+           width: 100%;
+           text-align: center;
+          padding:10px;
+           visibility: hidden;
+           
+        }     
+
+      &:hover {
+         h4{
+            
+            width: 100%;
+            text-align: center;
+            transition: 0.5s;
+            visibility: visible;
+            color: rgba(255, 255, 255, 0.938);
+           
+            background-color: rgba(0, 0, 0, 0.5);
+         }
+
+      }
+
+   }
+
    .carta{
       display: flex;
       align-items: end;

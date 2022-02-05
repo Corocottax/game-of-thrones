@@ -1,3 +1,20 @@
 .divHead{
     margin:1%;
 }
+
+.header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 4vw;
+
+}
+
+.derecha {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import { generatePath } from "react-router-dom";
 import SimpleBar from 'simplebar-react'; 
 import 'simplebar/dist/simplebar.min.css';
-import 'simplebar-react/dist/simplebar.min.css';
 import Buscador from "../../shared/Buscador/Buscador";
 
 const Personajes = ({inputValue, setInputValue}) => {
@@ -79,7 +78,7 @@ const Personajes = ({inputValue, setInputValue}) => {
 
                 {(!character.image || character.image === ("https://vignette.wikia.nocookie.net/gameofthrones/images/1/1b/Grenn.jpg/revision/latest?cb=20180702193920") || character.image === ("https://vignette.wikia.nocookie.net/gameofthrones/images/9/96/Oberyn-Martell-house-martell-37118334-2832-4256.jpg/revision/latest/scale-to-width-down/333?cb=20150815065729")) ?
                 
-                <div className="carta" style={{backgroundImage:'url(/got-personaje.png)'}}>  <h4 className="nombre">{character.name}</h4></div> :
+                <div className="cartaPredefinida" style={{backgroundImage:'url(/got-personaje.png)'}}>  <h4 className="nombre">{character.name}</h4></div> :
 
                 <div className="carta" style={{backgroundImage:'url('+ character.image+')'}}>  <h4 className="nombre">{character.name}</h4></div>
                 

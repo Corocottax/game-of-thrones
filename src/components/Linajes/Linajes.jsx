@@ -52,12 +52,12 @@ export default function Linajes({inputValue, setInputValue}) {
 
   return (
     <>
-      <div className="divHead">
-       <Buscador personajes={personajes} inputValue={inputValue} setInputValue={setInputValue}/>
-        <figcaption className="casLen" >
+      <div className="header">
+        <Buscador personajes={personajes} inputValue={inputValue} setInputValue={setInputValue}/>
+        <div className="derecha">
           <Castillito />
           <Idiomas />
-        </figcaption>
+        </div>
       </div>
       <div>
       <LinajesGallery list={Casas} />
