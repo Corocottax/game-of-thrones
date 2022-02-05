@@ -1,5 +1,15 @@
 {
   "Charac": "CHARACTERS",
   "house": "HOUSES",
-  "Crono": "CHRONOLOGY"
+  "Crono": "CHRONOLOGY",
+  "Ali": "ALLIANCES",
+  "apariciones": "APPEARANCES",
+   "padre": "FATHER",
+   "descendientes": "DESCENDANTS",
+   "titulos": "TITLES",
+   "lema": "MOTTO",
+   "sede": "HEADQUARTERS",
+   "region": "REGION",
+   "religiones": "RELIGIONS",
+   "fundadion": "FOUNDATION"
   }
