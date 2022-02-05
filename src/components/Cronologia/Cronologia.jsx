@@ -123,7 +123,9 @@ export function Cronologia() {
               <div className="crono__character" key={i}>
                 <p className="crono__info">{item.age.age}</p>
                 <p className="crono__info">{item.name}</p>
-                <img className="crono__photo" src={item.image} alt={item.name} />
+                <div className= "crono__photo" style={{backgroundImage:'url('+ item.image+')'}}>
+                {/* <img className="crono__photo" src={item.image} alt={item.name} /> */}
+                </div>
               </div>
             ))}
           </div>
@@ -135,11 +137,9 @@ export function Cronologia() {
               <div className="crono__character" key={i}>
                 <p className="crono__info">{item.age.age}</p>
                 <p className="crono__info">{item.name}</p>
-                <img
-                  className="crono__photo"
-                  src={item.image}
-                  alt={item.name}
-                />
+                <div className= "crono__photo" style={{backgroundImage:'url('+ item.image+')'}}>
+                {/* <img className="crono__photo" src={item.image} alt={item.name} /> */}
+                </div>
               </div>
             ))}
           </div>
