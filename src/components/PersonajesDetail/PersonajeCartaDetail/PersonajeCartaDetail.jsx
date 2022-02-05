@@ -2,6 +2,7 @@ import React from 'react';
 import "./PersonajeCartaDetail.scss"
 import SimpleBar from 'simplebar-react'; 
 import 'simplebar/dist/simplebar.min.css';
+import 'simplebar-react/dist/simplebar.min.css';
 
 const PersonajeCartaDetail = ({character, casas}) => {
 
