@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import SimpleBar from 'simplebar-react'; 
 import 'simplebar/dist/simplebar.min.css';
 import 'simplebar-react/dist/simplebar.min.css';
-
+import Arrow from "../../assets/flecha.svg";
 let charactersOrden = [];
 let characterPar = [];
 let characterIm = [];
@@ -99,7 +99,18 @@ export function Cronologia() {
            <button onClick={changeOrden} className="crono__btn">
               {" "}
               {charPar[0] ? charPar[0].age.age : "0"}{" "}
+
+              
             </button> 
+            <img
+            src={Arrow}
+            alt=""
+            className={
+              highToLow
+                ? "crono__arrow"
+                : "crono crono__arrow--rotate"
+            }
+          />
 
          
         </div>
@@ -139,8 +150,9 @@ export function Cronologia() {
       
       </SimpleBar>
       </div>
-      <Navbar />
+      
     </div>
+    <Navbar />
     </div>
   );
 }
