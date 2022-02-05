@@ -11,48 +11,58 @@ import 'simplebar/dist/simplebar.min.css';
 import 'simplebar-react/dist/simplebar.min.css';
 import Buscador from "../../shared/Buscador/Buscador";
 
-const Personajes = ({inputValue}) => {
+const Personajes = ({inputValue, setInputValue}) => {
   const [characters, setCharacters] = useState([]);
   const personajes = true;
   const charactersArray = [];
 
   useEffect(() => {
+
+    setInputValue("");
+
+  }, [])
+
+  useEffect(() => {
     fetch("https://api.got.show/api/show/characters/")
       .then((response) => {
 
-        if (inputValue) {
+        console.log(inputValue)
+        response.json().then((characters) => {
 
-          response.json().map((character) => {
+          if (inputValue) {
 
-            if (character.name === inputValue) {
-              
-              charactersArray.push(character);
-              return console.log(character);
+            characters.map((character) => {
+  
+              if (character.name.toLowerCase().includes(inputValue)) {
+                
+                return charactersArray.push(character);
+  
+              } else {
+  
+                return null
+  
+              }
+  
+            })
 
-            } else {
+            setCharacters(charactersArray);
+  
+          } else {
 
-              return null
+            setCharacters(characters)
 
-            }
+          }
 
-          })
-
-          return characters;
-
-        }
-
-        return response.json();
+        })
 
       })
-      .then((characters) => {
-        setCharacters(characters);
-      });
-  }, []);
+
+  }, [inputValue]);
 
   return (
     <div>
       <div className="header">
-        <Buscador personajes={personajes}/>
+        <Buscador personajes={personajes} inputValue={inputValue} setInputValue={setInputValue}/>
         <div className="derecha">
           <Castillito />
           <Idiomas />

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import Cronologia from './components/Cronologia/Cronologia';
@@ -8,6 +9,10 @@ import Personajes from './components/Personajes/Personajes';
 import PersonajesDetail from './components/PersonajesDetail/PersonajesDetail';
 
 function App() {
+
+  const [inputValue, setInputValue] = useState();
+
+
   return (
     <div>
       <BrowserRouter>
@@ -17,8 +22,8 @@ function App() {
           <Route path="/">
 
             <Route index element={<Inicio/>}/>
-            <Route path="personajes" element={<Personajes/>}/>
-            <Route path="linajes" element={<Linajes/>}/>
+            <Route path="personajes" element={<Personajes inputValue={inputValue} setInputValue={setInputValue}/>}/>
+            <Route path="linajes" element={<Linajes inputValue={inputValue} setInputValue={setInputValue}/>}/>
             <Route path="personajes/:name" element={<PersonajesDetail/>}/>
             <Route path="linajes/:name" element={<LinajesDetail/>}/>
             <Route path="cronologia" element={<Cronologia/>}/>
