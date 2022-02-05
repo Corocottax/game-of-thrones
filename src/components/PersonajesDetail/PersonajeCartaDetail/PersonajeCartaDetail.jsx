@@ -1,7 +1,7 @@
 import React from 'react';
 import "./PersonajeCartaDetail.scss"
-import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
+import SimpleBar from '../../../shared/simplebar-react';
+import '../../../shared/simplebar/dist/simplebar.min.css';
 
 const PersonajeCartaDetail = ({character, casas}) => {
 

@@ -6,8 +6,8 @@ import Castillito from "../../shared/Castillito/Castillito";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { generatePath } from "react-router-dom";
-import SimpleBar from 'simplebar-react';
-import 'simplebar/dist/simplebar.min.css';
+import SimpleBar from '../../../shared/simplebar-react';
+import '../../../shared/simplebar/dist/simplebar.min.css';
 import Buscador from "../../shared/Buscador/Buscador";
 
 const Personajes = () => {
