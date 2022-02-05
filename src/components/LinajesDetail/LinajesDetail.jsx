@@ -5,8 +5,8 @@ import Castillito from "../../shared/Castillito/Castillito";
 import Idiomas from "../../shared/Idiomas/Idiomas";
 import "./LinajesDetail.scss";
 import Volver from '../../shared/Volver/Volver'
-import SimpleBar from '../../../shared/simplebar-react';
-import '../../../shared/simplebar/dist/simplebar.min.css';
+import SimpleBar from 'simplebar-react'; 
+import 'simplebar/dist/simplebar.min.css';
 
 
 const LinajesDetail = () => {
