@@ -10,13 +10,38 @@ import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 import Buscador from "../../shared/Buscador/Buscador";
 
-const Personajes = () => {
+const Personajes = ({inputValue}) => {
   const [characters, setCharacters] = useState([]);
+  const personajes = true;
+  const charactersArray = [];
 
   useEffect(() => {
     fetch("https://api.got.show/api/show/characters/")
       .then((response) => {
+
+        if (inputValue) {
+
+          response.json().map((character) => {
+
+            if (character.name === inputValue) {
+              
+              charactersArray.push(character);
+              return console.log(character);
+
+            } else {
+
+              return null
+
+            }
+
+          })
+
+          return characters;
+
+        }
+
         return response.json();
+
       })
       .then((characters) => {
         setCharacters(characters);
@@ -26,7 +51,7 @@ const Personajes = () => {
   return (
     <div>
       <div className="header">
-        <Buscador />
+        <Buscador personajes={personajes}/>
         <div className="derecha">
           <Castillito />
           <Idiomas />

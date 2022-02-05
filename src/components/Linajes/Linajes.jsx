@@ -7,14 +7,39 @@ import LinajesGallery from "../LinajesGallery/LinajesGallery";
 import { getHouses } from "../../functions/Functions";
 import Buscador from "../../shared/Buscador/Buscador"
 
-export default function Linajes() {
-  const [Casas, setCasas] = useState([]);  
+export default function Linajes({inputValue}) {
+  const [Casas, setCasas] = useState([]);
+  const personajes = false;  
+  const casas = [];
 
   useEffect(() => {
    
     getHouses().then((data) => {
 
-      setCasas(data);
+      if (inputValue) {
+
+        data.map((character) => {
+
+          if (character.name === inputValue) {
+            
+            casas.push(character)
+            return console.log(character);
+
+          } else {
+
+            return null
+
+          }
+
+        })
+
+        setCasas(casas);
+
+      } else {
+
+        setCasas(data);
+
+      }
 
     });
 
@@ -23,7 +48,7 @@ export default function Linajes() {
   return (
     <>
       <div className="divHead">
-       <Buscador />
+       <Buscador personajes={personajes}/>
         <figcaption className="casLen" >
           <Castillito />
           <Idiomas />
