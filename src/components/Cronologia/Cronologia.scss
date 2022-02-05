@@ -1,54 +1,42 @@
+.barraCrono {
+  max-height: 70vh;
+  width: 500px;
+}
 
-  .barraCrono {
-
-    max-height: 70vh;
-    width: 500px;
-
-  }
-
-  .divSimpleBar {
-
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 40px;
-
-  }
-
+.divSimpleBar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
 
 .crono {
-
   &__header {
-
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin: 20px 4vw;
-  
   }
-  
+
   &__derecha {
-  
     display: flex;
     justify-content: center;
     align-items: center;
-  
   }
 
-  &__div{
+  &__div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 82%;
+    width: 70%;
     max-height: 74vh;
     top: 7rem;
     margin-left: 10vh;
-
   }
 
- 
-&__btn{
+  &__btn {
+    margin-top:38px;
     width: 3rem;
     height: 3rem;
     border-radius: 100%;
@@ -56,87 +44,84 @@
     display: flex;
     align-items: center;
     z-index: 1000;
-    background: rgb(0, 0, 0)
-}
-&__flecha{
+    background: rgb(0, 0, 0);
+    border: 3px solid white
+  }
+  &__flecha {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
     width: 3.5%;
-    
-    
-}
+  }
 
-&__arrow{
-  transform: rotate(180deg);
-  height: 4vh;
-  
+  &__arrow {
+    transform: rotate(180deg);
+    height: 4vh;
 
-  &--rotate{
+    &--rotate {
       transform: rotate(360deg);
       height: 4vh;
+    }
   }
-}
 
+  &__separator {
+    height: 10vh;
+    background-color: white;
+    width: 5%;
+    margin-top: 0;
+    margin-bottom: 0;
+    border: none;
+  }
 
-&__separator{
-  height: 10vh;
-  background-color: white;
-  width: 5%;
-  margin-top: 0;
-  margin-bottom: 0;
-  border: none;
-}
+  &__separator2 {
+    margin: 0;
+    border: none;
+  }
 
-&__separator2{
-  margin: 0;
-  background-color: white;
-  width: 0.2vw;
-  border: none;
-}
+  &__cards {
+    display: flex;
+    position: relative;
+    top: 14vh;
+    width: 100%;
+  }
 
-&__cards{
-  display: flex;
-  position: relative;
-  top: 14vh;
-} 
+  &__column {
+    margin-right: -2px;
+    text-align: center;
+    width: 85%;
+    border-right: 3px solid white;
+  }
 
-&__column{
-  text-align: center;
-  width: 65%;
-}
+  &__right {
+    text-align: center;
+    margin-top: 40%;
+    padding-right: 10px;
+   
+    
+  }
 
-&__right{
-  text-align: center;
-  margin-top: 15%;
+  &__character {
+    border-bottom: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-}
+  &__info {
+    margin: 3%;
+  }
 
-
-&__character{
-  border-bottom: 3px solid white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
-
-&__info{
-  margin: 3%;
-}
-
-&__photo{
-  margin: 3%;
-  width: 60%;
-  height: 12vh;
-  border-radius: 50%;
-  margin-bottom:40%;
-  
-}
-
-
-
-
+  &__photo {
+   
+    width: 150px;
+    height: 150px;
+    background: no-repeat;
+    background-size: cover;
+    margin: 5%;
+    border-radius: 50%
+   
+  }
 }
