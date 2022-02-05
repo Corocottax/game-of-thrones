@@ -8,8 +8,16 @@ const Idiomas = () => {
   return (
   <div className='idiomitas'>
 
-    <button className='banderitaEs'  value={"es"} onClick={context.selectLanguage} />
-    <button className='banderitaEn'   value={"en"} onClick={context.selectLanguage} />
+    <button className='banderitaEs' type='button'  value={"es"} onClick={context.selectLanguage}>
+
+      <img className='banderita' src='https://res.cloudinary.com/dhp2zuftj/image/upload/v1643819219/spain_2_nibk1z.png' alt='españita' />
+
+    </button>
+    <button className='banderitaEn' type='button' value={"en"} onClick={context.selectLanguage}>
+
+      <img className='banderita' src='https://res.cloudinary.com/dhp2zuftj/image/upload/v1643819251/united-kingdom_1_x47jxq.png' alt='englandcita' />
+
+    </button>
 
   </div>
   );
