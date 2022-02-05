@@ -1,9 +1,21 @@
-.banderita {
-
+.banderitaEs {
+    outline: inherit;
     width: 40%;
+    border: none;
     border-radius: 100%;
     margin: 5%;
-
+    background-image: url("https://res.cloudinary.com/dhp2zuftj/image/upload/v1643819219/spain_2_nibk1z.png");
+    height: 40px;
+}
+.banderitaEn {
+    outline: inherit;
+    width: 40%;
+    border: none;
+    border-radius: 100%;
+    margin: 5%;
+    background-image: url('https://res.cloudinary.com/dhp2zuftj/image/upload/v1643819251/united-kingdom_1_x47jxq.png');
+  
+    height: 40px;
 }
 
 .idiomitas {
