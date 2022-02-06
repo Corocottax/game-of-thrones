@@ -6,8 +6,9 @@ import Idiomas from "../../shared/Idiomas/Idiomas";
 import "./LinajesDetail.scss";
 import Volver from "../../shared/Volver/Volver";
 import SimpleBar from "simplebar-react";
-import "simplebar/src/simplebar.css";
+/* import "simplebar/src/simplebar.css"; */
 import { FormattedMessage } from "react-intl";
+import "../../shared/SimpleBarStyles/SimpleBarStyles.scss"
 
 const LinajesDetail = () => {
   let { name } = useParams("name");

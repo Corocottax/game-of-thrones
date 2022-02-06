@@ -6,9 +6,11 @@ import Idiomas from "../../shared/Idiomas/Idiomas";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import SimpleBar from 'simplebar-react'; 
-import 'simplebar/dist/simplebar.min.css';
-import 'simplebar-react/dist/simplebar.min.css';
+/* import 'simplebar/dist/simplebar.min.css';
+import 'simplebar-react/dist/simplebar.min.css'; */
 import Arrow from "../../assets/flecha.svg";
+import "../../shared/SimpleBarStyles/SimpleBarStyles.scss"
+
 let charactersOrden = [];
 let characterPar = [];
 let characterIm = [];
@@ -100,7 +102,7 @@ export function Cronologia() {
               {" "}
               {charPar[0] ? charPar[0].age.age : "0"}{" "}
 
-              
+
             </button> 
             <img
             src={Arrow}
@@ -150,9 +152,9 @@ export function Cronologia() {
       
       </SimpleBar>
       </div>
-      
-    </div>
-    <Navbar />
+
+      </div>
+      <Navbar />
     </div>
   );
 }

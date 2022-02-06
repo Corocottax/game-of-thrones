@@ -3,7 +3,6 @@ import { useParams} from 'react-router-dom';
 import React, { useEffect, useState } from "react";
 import { getCharacterByName, getHouses } from "../../functions/Functions"
 import PersonajeCartaDetail from "./PersonajeCartaDetail/PersonajeCartaDetail";
-import NotFound from "./NotFound/NotFound";
 import Castillito from "../../shared/Castillito/Castillito";
 import Idiomas from "../../shared/Idiomas/Idiomas";
 import Volver from "../../shared/Volver/Volver";
@@ -41,7 +40,7 @@ const PersonajesDetail = () => {
                     <Idiomas />
                 </div>
             </div>
-            {character ? <PersonajeCartaDetail character={character} casas={casas}/> : <NotFound />}
+            {character && <PersonajeCartaDetail character={character} casas={casas}/>}
         </div>
     );
     

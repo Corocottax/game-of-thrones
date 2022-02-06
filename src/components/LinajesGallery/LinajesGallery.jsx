@@ -1,8 +1,9 @@
 import { generatePath,Link } from "react-router-dom"
 import "./LinajesGallery.scss";
 import SimpleBar from 'simplebar-react'; 
-import 'simplebar/dist/simplebar.min.css';
-import 'simplebar-react/dist/simplebar.min.css';
+/* import 'simplebar/dist/simplebar.min.css';
+import 'simplebar-react/dist/simplebar.min.css'; */
+import "../../shared/SimpleBarStyles/SimpleBarStyles.scss"
 
 export default function LinajesGallery({list}){
     console.log(list)

@@ -7,8 +7,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { generatePath } from "react-router-dom";
 import SimpleBar from 'simplebar-react'; 
-import 'simplebar/dist/simplebar.min.css';
+/* import 'simplebar/dist/simplebar.min.css'; */
 import Buscador from "../../shared/Buscador/Buscador";
+import "../../shared/SimpleBarStyles/SimpleBarStyles.scss"
 
 const Personajes = ({inputValue, setInputValue}) => {
   const [characters, setCharacters] = useState([]);
