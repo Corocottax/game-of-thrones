@@ -17,7 +17,7 @@ const PersonajeCartaDetail = ({ character, casas }) => {
 
       <div className="info">
         <div className="infoDetalle">
-          <FormattedMessage id="HOUSE" defaultMessage="CASA" />
+          <FormattedMessage id="house" defaultMessage="CASA" />
           {casas &&
             casas.map((casa, index) => {
               if (casa.name === character.house) {
