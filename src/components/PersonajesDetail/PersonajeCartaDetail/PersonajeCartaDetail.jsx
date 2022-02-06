@@ -12,7 +12,15 @@ const PersonajeCartaDetail = ({ character, casas }) => {
   return (
     <div>
       <div className="cabecera">
-        <img src={character.image} alt={character.name} />
+
+        {(!character.image || character.image === ("https://vignette.wikia.nocookie.net/gameofthrones/images/1/1b/Grenn.jpg/revision/latest?cb=20180702193920") || character.image === ("https://vignette.wikia.nocookie.net/gameofthrones/images/9/96/Oberyn-Martell-house-martell-37118334-2832-4256.jpg/revision/latest/scale-to-width-down/333?cb=20150815065729")) ?
+                
+          <img src="/got-personaje.png" alt={character.name} /> :
+          
+          <img src={character.image} alt={character.name} />
+                
+        }
+
         <h2>{character.name}</h2>
       </div>
 
